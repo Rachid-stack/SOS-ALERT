@@ -1,0 +1,8 @@
+{
+  "name": "geo-locate-v3",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

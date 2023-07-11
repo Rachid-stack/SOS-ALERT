@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Geo-Localisation
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Geo-localisation</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card class="welcome-card" style="background-color:bisque">
+
+    <ion-card-header>
+      <ion-card-subtitle>Obtenir mes coordonneés</ion-card-subtitle>
+      <ion-card-title>Geolocalisation</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Cliquer pour obtenir la localisation de votre appareil en latitude et longitude.Autorisé l'application a utiliser votre emplacement une fois demandé.
+      </p>
+      <ion-row *ngIf="coords && coords.latitude">
+        <ion-text class="coords">Ma Latitude : {{coords.latitude}}</ion-text>
+      </ion-row>
+      <ion-row *ngIf="coords && coords.longitude">
+        <ion-text class="coords">Ma Longitude : {{coords.longitude}}</ion-text>
+      </ion-row>
+      <ion-button (click)="locate()" color="primary" expand="full" shape="round">Localise moi</ion-button>
+
+    </ion-card-content>
+  </ion-card>
+  <ion-row>
+     <ion-col></ion-col>
+     <ion-col>
+        <ion-button shape="circle" (click)="sendSms()" color="danger">
+          SOS
+        </ion-button>
+     </ion-col>
+     <ion-col></ion-col>
+  </ion-row>
+</ion-content>
